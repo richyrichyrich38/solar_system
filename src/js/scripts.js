@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
+import "style.css"
 
 import starsTexture from '../img/stars2.jpeg';
 import sunTexture from '../img/sun.jpg';
@@ -15,10 +16,14 @@ import uranusRingTexture from '../img/uranus ring.png';
 import neptuneTexture from '../img/neptune.jpg';
 import plutoTexture from '../img/pluto.jpg';
 import moonTexture from '../img/moon.jpeg'
+import { Mesh } from 'three';
 
 const renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(2);
 document.body.appendChild(renderer.domElement);
+
+// document.getElementById("h1").innerHTML = "Welcome to the Solar System"
 
 // Sets the color of the background
 // renderer.setClearColor(0xFEFEFE);
@@ -245,9 +250,12 @@ function animate() {
 renderer.setAnimationLoop(animate);
 
 window.addEventListener('resize', function() {
+
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
+
+
 
 // --no-thin
