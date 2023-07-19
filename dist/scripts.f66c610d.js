@@ -37703,6 +37703,8 @@ module.exports = "/neptune.72982aec.jpg";
 module.exports = "/pluto.04a289d3.jpg";
 },{}],"src/img/moon.jpeg":[function(require,module,exports) {
 module.exports = "/moon.6a95531c.jpeg";
+},{}],"src/img/nightmare.jpg":[function(require,module,exports) {
+module.exports = "/nightmare.1f2abff8.jpg";
 },{}],"src/js/scripts.js":[function(require,module,exports) {
 "use strict";
 
@@ -37723,17 +37725,25 @@ var _uranusRing = _interopRequireDefault(require("../img/uranus ring.png"));
 var _neptune = _interopRequireDefault(require("../img/neptune.jpg"));
 var _pluto = _interopRequireDefault(require("../img/pluto.jpg"));
 var _moon = _interopRequireDefault(require("../img/moon.jpeg"));
+var _nightmare = _interopRequireDefault(require("../img/nightmare.jpg"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+// import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+
+// adding 2d text to 3d
+// const canvas = document.createElement('canvas');
+// const context = canvas.getContext('2d')
+
+// context.fillStyle = 'white'
+// context.font = '100px sans-serif'
+// context.fillText('Hello World!', 0, 60)
 var renderer = new THREE.WebGLRenderer({
   antialias: true
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(2);
 document.body.appendChild(renderer.domElement);
-
-// document.getElementById("h1").innerHTML = "Welcome to the Solar System"
 
 // Sets the color of the background
 // renderer.setClearColor(0xFEFEFE);
@@ -37758,7 +37768,7 @@ scene.add(axesHelper);
 var ambientLight = new THREE.AmbientLight(0x333333);
 scene.add(ambientLight);
 var cubeTextureLoader = new THREE.CubeTextureLoader();
-scene.background = cubeTextureLoader.load([_stars.default, _stars.default, _stars.default, _stars.default, _stars.default, _stars.default]);
+scene.background = cubeTextureLoader.load([_stars.default, _stars.default, _stars.default, _stars.default, _nightmare.default, _stars.default]);
 var textureLoader = new THREE.TextureLoader();
 var pointLight = new THREE.PointLight(0xffffff, 2, 300);
 var sunGeo = new THREE.SphereGeometry(30, 30, 30);
@@ -37933,7 +37943,7 @@ window.addEventListener('resize', function () {
 });
 
 // --no-thin
-},{"three":"node_modules/three/build/three.module.js","three/examples/jsm/controls/OrbitControls.js":"node_modules/three/examples/jsm/controls/OrbitControls.js","style.css":"node_modules/style.css/style.css","../img/stars2.jpeg":"src/img/stars2.jpeg","../img/sun.jpg":"src/img/sun.jpg","../img/mercury.jpg":"src/img/mercury.jpg","../img/venus.jpg":"src/img/venus.jpg","../img/earth.jpg":"src/img/earth.jpg","../img/mars.jpg":"src/img/mars.jpg","../img/jupiter.jpg":"src/img/jupiter.jpg","../img/saturn.jpg":"src/img/saturn.jpg","../img/saturn ring.png":"src/img/saturn ring.png","../img/uranus.jpg":"src/img/uranus.jpg","../img/uranus ring.png":"src/img/uranus ring.png","../img/neptune.jpg":"src/img/neptune.jpg","../img/pluto.jpg":"src/img/pluto.jpg","../img/moon.jpeg":"src/img/moon.jpeg"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"three":"node_modules/three/build/three.module.js","three/examples/jsm/controls/OrbitControls.js":"node_modules/three/examples/jsm/controls/OrbitControls.js","style.css":"node_modules/style.css/style.css","../img/stars2.jpeg":"src/img/stars2.jpeg","../img/sun.jpg":"src/img/sun.jpg","../img/mercury.jpg":"src/img/mercury.jpg","../img/venus.jpg":"src/img/venus.jpg","../img/earth.jpg":"src/img/earth.jpg","../img/mars.jpg":"src/img/mars.jpg","../img/jupiter.jpg":"src/img/jupiter.jpg","../img/saturn.jpg":"src/img/saturn.jpg","../img/saturn ring.png":"src/img/saturn ring.png","../img/uranus.jpg":"src/img/uranus.jpg","../img/uranus ring.png":"src/img/uranus ring.png","../img/neptune.jpg":"src/img/neptune.jpg","../img/pluto.jpg":"src/img/pluto.jpg","../img/moon.jpeg":"src/img/moon.jpeg","../img/nightmare.jpg":"src/img/nightmare.jpg"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -37958,7 +37968,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63830" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51525" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

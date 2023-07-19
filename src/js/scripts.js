@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js';
-import "style.css"
+import "style.css";
+// import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
 import starsTexture from '../img/stars2.jpeg';
 import sunTexture from '../img/sun.jpg';
@@ -16,14 +17,23 @@ import uranusRingTexture from '../img/uranus ring.png';
 import neptuneTexture from '../img/neptune.jpg';
 import plutoTexture from '../img/pluto.jpg';
 import moonTexture from '../img/moon.jpeg'
-import { Mesh } from 'three';
+import nightmare from '../img/nightmare.jpg';
+import { Color, Mesh } from 'three';
+
+// adding 2d text to 3d
+// const canvas = document.createElement('canvas');
+// const context = canvas.getContext('2d')
+
+// context.fillStyle = 'white'
+// context.font = '100px sans-serif'
+// context.fillText('Hello World!', 0, 60)
 
 const renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(2);
 document.body.appendChild(renderer.domElement);
 
-// document.getElementById("h1").innerHTML = "Welcome to the Solar System"
+
 
 // Sets the color of the background
 // renderer.setClearColor(0xFEFEFE);
@@ -60,9 +70,11 @@ scene.background = cubeTextureLoader.load([
     starsTexture,
     starsTexture,
     starsTexture,
-    starsTexture,
+    nightmare,
     starsTexture
 ]);
+
+
 
 const textureLoader = new THREE.TextureLoader();
 
